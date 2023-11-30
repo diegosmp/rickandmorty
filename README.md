@@ -15,3 +15,11 @@ Consumo da API do rick end morty com async e await de forma simples.
 <div>
 <img alt="Logo do ricky and Morty" src="./assets/rick-and-morty-logo.png" height="250"  />
 </div>
+
+### Como utilizar
+Basta clonar o projeto e começar a modificar o código como você quiser ou apenas estude e acrescente algo.
+
+### Observações finais
+Esse projeto ainda vai sofrer modificações futuras como acrescentar as partes de Sobre e Doc e também irei deixa-lo responsivo.
+
+#### Código feito por Diêgo  Sampaio
