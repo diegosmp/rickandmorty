@@ -1,37 +1,25 @@
 async function getAllPerson(){
     const response = await fetch('https://rickandmortyapi.com/api/character/')
-    .then(res => res.json())
-    .catch(error => error)
-    return response
+    const persons = await response.json()
+
+    return persons.results.map(createElements)
 }
 
-async function showAllPerson(){
-    const showPersons = await getAllPerson()
-    
-    showPersons.results.map(data =>{
-        const container = document.querySelector("#container")
-        const name = document.createElement('h2')
-        const species = document.createElement('h3')
-        const status = document.createElement('p')
-        const image = document.createElement('img')
+function createElements(person) {
+    const div = document.createElement('div')
+    div.classList.add('cards-person')
 
-        image.classList.add("card")
-        name.classList.add("h2-name")
-        species.classList.add("h3-species")
-        status.classList.add("p-status")
+    const name = document.createElement('h2')
+    name.textContent = person['name']
 
-        image.src = data['image']
-        name.innerHTML = data['name']
-        species.innerHTML = data['species']
-        status.innerHTML = data['status']
+    const image = document.createElement('img')
+    image.src = person['image']
 
-        container.appendChild(name)
-        container.appendChild(image)
-        container.appendChild(species)
-        container.appendChild(status)
-    })
+    const status = document.createElement('p')
+    status.textContent = person['status']
 
-    return showPersons
+    div.append(name, image, status)
+    document.querySelector('#container').append(div)
 }
 
-showAllPerson()
+getAllPerson()

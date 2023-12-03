@@ -25,12 +25,6 @@ body{
     color: var(--text-color-primary);
 }
 
-.p-status {
-    font-size: 1.2rem;
-    padding-top: .875rem;
-    font-family: var(--text-font-secondary);
-}
-
 .h2-name {
     font-size: 2rem;
     font-family: var(--text-font-secondary);
@@ -114,28 +108,41 @@ body{
 }
 
 #container{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 15rem);
+    grid-template-rows: auto;
     align-items: center;
-}
-
-.card{
-    width: 10rem;
-    border-radius: 4px;
-    margin: .875rem;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
 }
 
 .cards-person{
-    width: 100%;
-
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     
     margin-bottom: 2rem;
     padding: .875rem .6rem;
     background: #2c2c2c;
     border-radius: 8px;
+}
+
+#container p {
+    font-size: 1.2rem;
+    padding-top: .875rem;
+    font-family: var(--text-font-secondary);
+}
+
+#container h2 {
+    font-size: 1.8rem;
+    font-family: var(--text-font-secondary);
+    padding-bottom: .5rem;
+    color: var(--select-color);
+}
+
+#container img {
+    width: 10rem;
 }
 
 .footer {
